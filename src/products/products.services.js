@@ -90,7 +90,7 @@ const delOneProduct = (req, res) => {
   const productId = req.params.id;
   productsController.deleteteProductByID(productId)
     .then(data => {
-      data[0]
+      data
         ? res.status(204).json()
         : res.status(200).json({
           message: 'Invalid ID'
